@@ -22,15 +22,18 @@ document.querySelector('#app').innerHTML = `
 `
 
 setupCounter(document.querySelector('#counter')) */
+let i = 0
 const DOMSelectors = {
   button: document.querySelector('#btn'),
 };
 DOMSelectors.button.addEventListener("click", function () {
   random5();
+  i++;
+  console.log(i);
 })
 function random5() {
-  const a = Math.floor(Math.random() * 10);
-  if (a === [0, 1, 2, 3, 4, 5]){
+  const a = Math.floor(Math.random() * 1000);
+  if (a === 0 || a === 1 || a === 2  || a === 3 || a === 4 || a === 5){
     console.log("nice")
   }
   console.log(a)
