@@ -35,12 +35,12 @@ DOMSelectors.button.addEventListener("click", function () {
 DOMSelectors.button2.addEventListener("click", function () {
   oneclick();
   while (i > 0){
-    oneclick();
+    oneclick(); //once i is back to 0, stop
   }
 })
 function oneclick(){
   if (i >= 74){
-    factor = Math.min(1, factor + 0.06)
+    factor = Math.min(1, factor + 0.06) //if factor + 0.06 exceeds 1, use 1 instead of factor + 0.06
   }
   if (random5()){
     return
@@ -48,13 +48,14 @@ function oneclick(){
   i++;
   console.log(i);
   console.log(factor);
+  document.getElementById("pull").innerText = i;
 }
 
 function random5() {
-  const a = Math.floor(Math.random() * 1000);
-  if (a < (factor * 1000)){
+  const a = Math.floor(Math.random() * 1000); //takes random number from 0 - 999
+  if (a < (factor * 1000)){ //takes percentage to use for random number
     win();
-    return true
+    return true //if win, do not add another i
   }
   console.log(a)
   return false
@@ -71,9 +72,9 @@ function win() {
 }
 function avg(){
   let sum = 0
-  for (let x of history){
-    sum = sum + x
+  for (let x of history){ 
+    sum = sum + x //takes sum of every item in history
   }
-  return Math.round(sum / history.length * 100) / 100
+  return Math.round(sum / history.length * 100) / 100 //Round to integer, then put it back
 }
 // 74 6.6% 75 12.6% 76 18.6% 
