@@ -5,3 +5,11 @@ body {
   align-items: center;
   text-align: center;
 }
+.data {
+  margin-top: 1rem;
+}
+.btn {
+  height: 2rem;
+  background: black;
+  color: rgb(192, 110, 255)
+}
