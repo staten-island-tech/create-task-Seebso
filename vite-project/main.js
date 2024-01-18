@@ -60,7 +60,23 @@ function random5() {
   console.log(a)
   return false
 }
+let f = 1
+function fifty() {
+  const a = Math.floor(Math.random() * 2);
+  if (f % 2 === 0){
+    console.log("Guranteed")
+    f++;
+    return
+  }
+  if (a === 1){
+    f++;
+    console.log("You lost the 50-50")
+    return
+  }
+    console.log("You won the 50-50")
+}
 function win() {
+  fifty();
   let turns = i+1
   console.log("Nice! You got a 5 star after " + (turns) + " pulls")
   history.push(turns)
