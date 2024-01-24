@@ -28,6 +28,7 @@ let history = []
 const DOMSelectors = {
   button: document.querySelector('#btn'),
   button2: document.querySelector('#btn2'),
+  fifty: document.querySelector('#fifty')
 };
 DOMSelectors.button.addEventListener("click", function () {
   oneclick();
@@ -62,18 +63,22 @@ function random5() {
 }
 let f = 1
 function fifty() {
-  const a = Math.floor(Math.random() * 2);
+  DOMSelectors.fifty.innerHTML = ""
+  const a = Math.random();
   if (f % 2 === 0){
-    console.log("Guranteed")
+    console.log("Guaranteed")
+    DOMSelectors.fifty.innerHTML = "Guaranteed Win"
     f++;
     return
   }
-  if (a === 1){
+  if (a < 0.5){
     f++;
     console.log("You lost the 50-50")
+    DOMSelectors.fifty.innerHTML = "You lost the 50-50! D:"
     return
   }
-    console.log("You won the 50-50")
+  console.log("You won the 50-50")
+  DOMSelectors.fifty.innerHTML = "You won the 50-50! :D"
 }
 function win() {
   fifty();

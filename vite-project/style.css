@@ -13,3 +13,7 @@ body {
   background: black;
   color: rgb(192, 110, 255)
 }
+.number {
+  font-weight: bold;
+  color:rgb(0, 110, 255);
+}
