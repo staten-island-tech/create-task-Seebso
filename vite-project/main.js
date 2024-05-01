@@ -87,15 +87,17 @@ function win() {
   history.push(turns)
   factor = 0.006
   document.getElementById("games").innerText = history.length;
-  document.getElementById("wish").innerText = avg();
+  document.getElementById("wish").innerText = avg(history);
   document.getElementById("last").innerText = turns;
   i = 0
 }
-function avg(){
+function avg(numberSet){
   let sum = 0
-  for (let x of history){ 
-    sum = sum + x //takes sum of every item in history
+  for (let x of numberSet){ 
+    if (x > 0){
+      sum = sum + x //takes sum of every item in numberSet
+    }
   }
-  return Math.round(sum / history.length * 100) / 100 //Round to integer, then put it back
+  return Math.round(sum / numberSet.length * 100) / 100 //Round to integer, then put it back
 }
 // 74 6.6% 75 12.6% 76 18.6% 
